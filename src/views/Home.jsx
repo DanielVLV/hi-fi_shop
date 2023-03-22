@@ -2,24 +2,18 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-// const User = require('./User');
+const ProductCard = require('./ProductCard');
 
-module.exports = function Home({ user, allProducts }) {
+module.exports = function Home({ user, allProductCard }) {
   return (
     <Layout user={user}>
-      <a href="/">
-        <div />
-        <div className="allProducts">
-          {allProducts
-            ? (
-              <>
-                {allProducts.map((el) => (
-                  <Product el={el} />
-                ))}
-              </>
-            ) : (null)}
-        </div>
-      </a>
+      <div style={{ marginTop: '150px', color: 'white' }}>
+        {allProductCard ? (
+          <>
+            {allProductCard.map((el) => (<ProductCard el={el} />))}
+          </>
+        ) : (null)}
+      </div>
     </Layout>
   );
 };
