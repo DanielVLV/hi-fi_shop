@@ -5,7 +5,7 @@ const Registration = require('../views/Registration');
 
 const renderTemplate = require('../renderTemplate');
 
-const { User } = require('../../db/models');
+// const { User } = require('../../db/models');
 
 router.get('/registration', async (req, res) => {
   renderTemplate(Registration, null, res);
