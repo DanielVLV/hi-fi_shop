@@ -10,7 +10,6 @@ const path = require('path');
 const dbConnect = require('./db/config/dbConnect');
 const authRouter = require('./src/routes/authorization.router');
 const indexRouter = require('./src/routes/index.router');
-const home = require('./src/routes/home.router');
 const profile = require('./src/routes/profile.router')
 
 const app = express();
@@ -32,7 +31,7 @@ app.use(
   })
 );
 
-app.get('/', home);
+
 app.use('/', profile);
 
 app.use(morgan('dev'));
