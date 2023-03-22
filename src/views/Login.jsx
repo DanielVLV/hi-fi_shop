@@ -3,13 +3,16 @@ const React = require('react');
 const Layout = require('./Layout');
 
 module.exports = function Login() {
+  console.log('Login.jsx')
   return (
     <Layout>
-      <div>
-        <input type="email" placeholder="Email" style={{ color: 'black' }} />
-        <input type="password" placeholder="Password" style={{ color: 'black' }} />
-        <button type="submit" style={{ color: 'black' }}>Push Me</button>
-      </div>
+      <link rel="stylesheet" href="../../css/formAuth.css" />
+      <form className="login-form">
+        <h3>Log In</h3>
+        <input required className="input" name="email" type="text" placeholder="e-mail" id="username" />
+        <input required className="input" name="password" type="password" placeholder="password" id="password" />
+        <button className="login_submit" type="submit">Submit</button>
+      </form>
     </Layout>
   );
 };
