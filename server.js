@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const path = require('path');
 
 const home = require('./src/routes/home.router');
+const profile = require('./src/routes/profile.router')
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', home);
+app.use('/', profile);
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(process.cwd(), 'public')));
