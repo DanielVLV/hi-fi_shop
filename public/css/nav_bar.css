@@ -8,7 +8,11 @@
   --blue: #b0d7ffff;
 }
 body {
-  background-image: url('../img/ming-BXKF-rHHbT4-unsplash.jpg');
+  background: linear-gradient(
+      45deg,
+      var(--metal) 0%,
+      var(--blue) 100%
+    );
   font-family: 'Sono', sans-serif;
 }
 header {
