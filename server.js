@@ -15,6 +15,7 @@ const Profile = require('./src/views/Profile');
 // const login = require('./src/routes/login.router');
 // const registration = require('./src/routes/registration.router');
 // const logout = require('./src/routes/logout');
+const profile = require('./src/routes/profile.router');
 
 const app = express();
 // const { PORT, COOKIE_SEKRET } = process.env;
@@ -42,6 +43,7 @@ app.get('/home', home);
 app.use(morgan('dev'));
 app.use(express.static(path.join(process.cwd(), 'public')));
 
+app.use('/', profile);
 // app.get('/login', login);
 // app.get('/logout', logout);
 // app.get('/registration', registration);
