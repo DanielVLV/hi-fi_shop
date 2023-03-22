@@ -10,16 +10,12 @@ const path = require('path');
 const dbConnect = require('./db/config/dbConnect');
 const authRouter = require('./src/routes/authorization.router');
 const indexRouter = require('./src/routes/index.router');
-const home = require('./src/routes/home.router');
 
 const app = express();
 const { PORT, COOKIE_SECRET } = process.env;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.get('/', home);
-
 app.use(
   session({
     name: 'Cookie',
@@ -33,6 +29,8 @@ app.use(
     },
   })
 );
+
+
 app.use(morgan('dev'));
 app.use(express.static(path.join(process.cwd(), 'public')));
 

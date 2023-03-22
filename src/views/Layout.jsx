@@ -1,7 +1,16 @@
 const React = require('react');
 
+function checkUsername(username) {
+  const regex = /^[a-zA-Zа-яА-Я]+$/;
+  if (regex.test(username)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 module.exports = function Layout({ children, user }) {
+  console.log(user);
   return (
     <html lang="en">
       <head>
@@ -23,19 +32,26 @@ module.exports = function Layout({ children, user }) {
             <div className="navbar-menu">
               {user ? (
                 <>
-                  <a className="navbar-item" href="/work">card</a>
-                  <a className="navbar-item log-out">log out</a>
+                  <a className="navbar-item" href="/work">
+                    card
+                  </a>
+                  <a className="navbar-item">log out</a>
+                  <a className="navbar-item" href="#link">
+                    {user?.username}
+                  </a>
                 </>
               ) : (
                 <>
-                  <a className="navbar-item" href="/login"> sign in</a>
-                  <a className="navbar-item" href="/registration">sign up</a>
+                  <a className="navbar-item" href="/login">
+                    {' '}
+                    sign in
+                  </a>
+                  <a className="navbar-item" href="/registration">
+                    sign up
+                  </a>
                 </>
               )}
             </div>
-            <a className="navbar-item" href="#link">
-              user
-            </a>
           </nav>
         </header>
         <main>{children}</main>
