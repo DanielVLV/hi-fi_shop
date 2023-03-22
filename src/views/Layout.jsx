@@ -19,12 +19,14 @@ module.exports = function Layout({ children, user }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/normalize.css" />
-        <link rel="stylesheet" href="/css/nav_bar.css" />
+        <link rel="stylesheet" href="/css/nav_footer.css" />
+        <link rel="stylesheet" href="/css/form.css" />
+        <link rel="stylesheet" href="/css/index.css" />
         <script defer src="../../js/authorization.js" />
         <title />
       </head>
       <body>
-        <header>
+        <header className="header">
           <nav className="navbar">
             <a id="logo" className="navbar-item" href="/">
               home
@@ -54,8 +56,10 @@ module.exports = function Layout({ children, user }) {
             </div>
           </nav>
         </header>
-        <main>{children}</main>
-        <footer>footer</footer>
+        <main className="main">{children}</main>
+        <footer className="footer">
+          © 2023 "I'm a programmer at my mom's". All rights reserved.
+        </footer>
       </body>
     </html>
   );
