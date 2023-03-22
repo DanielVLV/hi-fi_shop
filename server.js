@@ -10,7 +10,7 @@ const path = require('path');
 const renderTemplate = require('./src/renderTemplate');
 const Profile = require('./src/views/Profile');
 
-// const login = require('./src/routes/login.router');
+const productsRouter = require('./src/routes/products.router');
 // const registration = require('./src/routes/registration.router');
 // const logout = require('./src/routes/logout');
 
@@ -46,9 +46,10 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 // app.post('/registration', registration);
 // app.post('/login', login);
 
-// const indexRouter = require('./src/routes/home.router');
+const indexRouter = require('./src/routes/index.router');
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
+app.use('/products', productsRouter);
 
 app.get('/', (req, res) => {
   renderTemplate(Profile, null, res);

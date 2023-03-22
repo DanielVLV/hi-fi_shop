@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js --ext js,jsx"
+    "start": "node server.js",
+    "dev": "nodemon server.js --ext js,jsx --ignore sessions"
   },
   "keywords": [],
   "author": "",

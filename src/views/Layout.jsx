@@ -12,6 +12,7 @@ module.exports = function Layout({ children, user }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/nav_bar.css" />
+        <link rel="stylesheet" href="/css/product-page.css" />
         {/* <script defer src="" /> */}
         <title />
       </head>
@@ -53,7 +54,7 @@ module.exports = function Layout({ children, user }) {
           </header>
         </header>
         <div>{children}</div>
-        <footer>footer</footer> 
+        <footer>footer</footer>
       </body>
     </html>
   );
