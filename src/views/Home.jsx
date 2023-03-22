@@ -2,7 +2,7 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-const User = require('./User');
+// const User = require('./User');
 
 module.exports = function Home({ user, allProducts }) {
   return (
@@ -18,7 +18,6 @@ module.exports = function Home({ user, allProducts }) {
                 ))}
               </>
             ) : (null)}
-          <User />
         </div>
       </a>
     </Layout>
