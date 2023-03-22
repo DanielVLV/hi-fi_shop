@@ -7,19 +7,20 @@ const User = require('./User');
 module.exports = function Home({ user, allProducts }) {
   return (
     <Layout user={user}>
-      <div>
-      </div>
-      <div className="allProducts">
-        {allProducts
-          ? (
-            <>
-              {allProducts.map((el) => (
-                <Product el={el} />
-              ))}
-            </>
-          ) : (null)}
-        <User />
-      </div>
+      <a href="/">
+        <div />
+        <div className="allProducts">
+          {allProducts
+            ? (
+              <>
+                {allProducts.map((el) => (
+                  <Product el={el} />
+                ))}
+              </>
+            ) : (null)}
+          <User />
+        </div>
+      </a>
     </Layout>
   );
 };
