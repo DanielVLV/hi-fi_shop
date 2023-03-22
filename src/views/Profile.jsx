@@ -11,7 +11,7 @@ module.exports = function Profile({ favoriteProducts }) {
         </div>
         <div className="favorite_products">
           <h2>Favorite products</h2>
-          {favoriteProducts.length ? (
+          {favoriteProducts?.length ? (
             favoriteProducts.map((product) => (
               <div className="product_container">
                 <a href="#">

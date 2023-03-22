@@ -3,7 +3,7 @@ const renderTemplate = require('../renderTemplate');
 const Home = require('../views/Home');
 const { Product } = require('../../db/models');
 
-router.get('/home', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const allProductCard = await Product.findAll({ raw: true });
     renderTemplate(Home, { allProductCard }, res);
