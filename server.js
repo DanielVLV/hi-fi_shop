@@ -10,13 +10,8 @@ const path = require('path');
 const dbConnect = require('./db/config/dbConnect');
 const authRouter = require('./src/routes/authorization.router');
 const indexRouter = require('./src/routes/index.router');
-const profile = require('./src/routes/profile.router')
-const renderTemplate = require('./src/renderTemplate');
-const Profile = require('./src/views/Profile');
-
 const productsRouter = require('./src/routes/products.router');
-// const registration = require('./src/routes/registration.router');
-// const logout = require('./src/routes/logout');
+const profile = require('./src/routes/profile.router');
 
 const app = express();
 const { PORT, COOKIE_SECRET } = process.env;
@@ -34,9 +29,8 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 10,
       httpOnly: true,
     },
-  })
+  }),
 );
-
 
 app.use('/', profile);
 
@@ -46,20 +40,10 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 // Routes
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/products', productsRouter);
 
 app.get('*', (req, res) => {
   res.redirect('/');
-});
-// app.post('/registration', registration);
-// app.post('/login', login);
-
-const indexRouter = require('./src/routes/index.router');
-
-app.use('/', indexRouter);
-app.use('/products', productsRouter);
-
-app.get('/', (req, res) => {
-  renderTemplate(Profile, null, res);
 });
 
 dbConnect(); //? сообщение о подключении к базе данных

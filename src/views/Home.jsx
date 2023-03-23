@@ -14,13 +14,6 @@ module.exports = function Home({ user, allProductCard }) {
           </>
         ) : (null)}
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <a href="/products/1">Product 1 page</a>
       {/* <a href="/">
         <div />
