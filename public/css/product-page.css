@@ -9,3 +9,36 @@
 .product-info {
   display: flex;
 }
+
+.product-img-container {
+  width: 50%;
+  position: relative;
+}
+
+.product-main {
+  width: 50%;
+}
+
+.mySwiper .swiper-slide {
+  padding-top: 100%;
+}
+
+.mySwiper .swiper-slide::before {
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+.slide-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slide-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

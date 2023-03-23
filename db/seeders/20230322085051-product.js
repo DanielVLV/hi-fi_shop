@@ -12,7 +12,7 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Products', [{
       productName: 'LG OLED88Z29LA',
-      imagesUrls: './img/products/1.jpg',
+      imagesUrls: './img/products/1.jpg, ./img/products/1.jpg',
       propsSrc: '../txt/1LGOLED88Z29LA.txt',
       price: 1700000,
       categoryId: 1,

@@ -17,7 +17,9 @@ module.exports = function Product(props) {
                 <div className="swiper-wrapper">
                   {product.images?.map((img) => (
                     <div className="swiper-slide">
-                      <img src={`/.${img}`} />
+                      <div className="slide-img-wrapper">
+                        <img src={`/.${img}`} />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -54,6 +56,8 @@ module.exports = function Product(props) {
           </table>
         </section>
       </div>
+      <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" />
+      <script defer src="../js/swiper.js" />
 
     </Layout>
   );

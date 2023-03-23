@@ -11,6 +11,7 @@ module.exports = function Layout({ children, user }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
         <link rel="stylesheet" href="/css/nav_bar.css" />
         <link rel="stylesheet" href="/css/product-page.css" />
         {/* <script defer src="" /> */}
