@@ -11,8 +11,31 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('Categories', [{
-      categoryName: 'Телевизоры',
-    }], {});
+      categoryName: 'tv',
+    },
+    {
+      categoryName: 'projector',
+    },
+    {
+      categoryName: 'amplifier',
+    },
+    {
+      categoryName: 'converter',
+    },
+    {
+      categoryName: 'cd player',
+    },
+    {
+      categoryName: 'cable',
+    },
+    {
+      categoryName: 'subwoofer',
+    },
+    {
+      categoryName: 'acoustics',
+    },
+
+    ], {});
   },
 
   async down(queryInterface, Sequelize) {
