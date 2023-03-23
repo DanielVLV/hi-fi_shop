@@ -1,22 +1,16 @@
 {
   "env": {
-      "browser": true,
-      "commonjs": true,
-      "es2021": true,
-      "node": true
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
   },
-  "extends": [
-      "plugin:react/recommended",
-      "airbnb"
-  ],
-  "overrides": [
-  ],
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "overrides": [],
   "parserOptions": {
-      "ecmaVersion": "latest"
+    "ecmaVersion": "latest"
   },
-  "plugins": [
-      "react"
-  ],
+  "plugins": ["react"],
   "rules": {
     "import/no-unresolved": 0,
     "import/no-extraneous-dependencies": 0
