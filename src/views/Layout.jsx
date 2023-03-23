@@ -1,16 +1,14 @@
 const React = require('react');
 
-function checkUsername(username) {
-  const regex = /^[a-zA-Zа-яА-Я]+$/;
-  if (regex.test(username)) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function checkUserName(username) {
+//   const regex = /^[a-zA-Zа-яА-Я]+$/;
+//   if (regex.test(username)) {
+//     return true;
+//   }
+//   return false;
+// }
 
 module.exports = function Layout({ children, user }) {
-  console.log(user);
   return (
     <html lang="en">
       <head>
@@ -40,7 +38,7 @@ module.exports = function Layout({ children, user }) {
                   <a className="navbar-item" href="/work">
                     card
                   </a>
-                  <a className="navbar-item">log out</a>
+                  <a className="navbar-item log-out" href="#link">log out</a>
                   <a className="navbar-item" href="#link">
                     {user?.username}
                   </a>
@@ -48,7 +46,6 @@ module.exports = function Layout({ children, user }) {
               ) : (
                 <>
                   <a className="navbar-item" href="/login">
-                    {' '}
                     sign in
                   </a>
                   <a className="navbar-item" href="/registration">

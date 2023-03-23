@@ -27,7 +27,7 @@ registrationForm?.addEventListener('submit', async (e) => {
 loginForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   console.log('=======');
-  const response = await fetch(`/auth/login`, {
+  const response = await fetch('/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -52,8 +52,8 @@ loginForm?.addEventListener('submit', async (e) => {
 
 logOutButton?.addEventListener('click', async (e) => {
   e.preventDefault();
-
-  const response = await fetch(`/auth/logout`, {
+  console.log('====logOutButton===');
+  const response = await fetch('/auth/logout', {
     method: 'GET',
   });
   const json = await response.json();

@@ -3,7 +3,7 @@ const React = require('react');
 const Layout = require('./Layout');
 
 module.exports = function Login() {
-  console.log('Login.jsx')
+  console.log('Login.jsx');
   return (
     <Layout>
       <form className="login-form">
