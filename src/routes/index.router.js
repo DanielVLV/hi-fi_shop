@@ -6,7 +6,6 @@ const Home = require('../views/Home');
 const Registration = require('../views/Registration');
 const Login = require('../views/Login');
 
-
 router.get('/', async (req, res) => {
   try {
     const { user } = req.session;

@@ -4,9 +4,8 @@ function checkUsername(username) {
   const regex = /^[a-zA-Zа-яА-Я]+$/;
   if (regex.test(username)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 module.exports = function Layout({ children, user }) {
@@ -24,6 +23,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/product-page.css" />
         <link rel="stylesheet" href="/css/form.css" />
         <link rel="stylesheet" href="/css/index.css" />
+        <script defer src="../../js/index.js" />
         <script defer src="../../js/authorization.js" />
         <script defer src="../../js/profile.js" />
         <title />
@@ -35,8 +35,10 @@ module.exports = function Layout({ children, user }) {
               home
             </a>
             <div className="navbar-menu">
+              <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
               {user ? (
                 <>
+                  <a className="navbar-item" href="/orders">Orders</a>
                   <a className="navbar-item" href="/work">
                     card
                   </a>

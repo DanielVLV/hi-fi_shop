@@ -35,11 +35,11 @@ module.exports = function Product(props) {
             <button type="button" id="add-to-favourites-btn">Добавить в избранное</button>
             <div className="cart-btn-wrapper">
               <div className="cart-controls">
-                <button className="btn-less" type="button" disabled="true">-</button>
+                <button className="btn-less" type="button">-</button>
                 <span className="quantity-display">1</span>
                 <button className="btn-more" type="button">+</button>
               </div>
-              <button id="add-to-cart-btn" type="button">В корзину</button>
+              <button className="add-to-cart-btn" id="add-to-cart-btn" type="button" data-product-id={`${product.id}`} data-price={`${product.price}`}>В корзину</button>
             </div>
           </div>
         </section>

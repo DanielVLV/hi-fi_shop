@@ -42,3 +42,7 @@
   height: 100%;
   object-fit: cover;
 }
+
+.cart-btn-wrapper {
+  display: flex;
+}

@@ -7,14 +7,17 @@ const ProductCard = require('./ProductCard');
 module.exports = function Home({ user, allProductCard }) {
   return (
     <Layout user={user}>
-      <div style={{ marginTop: '150px', color: 'white' }}>
-        {allProductCard ? (
-          <>
-            {allProductCard.map((product) => (<ProductCard product={product} />))}
-          </>
-        ) : (null)}
+      <div className="container">
+        <a href="/products/1">Product 1 page</a>
+        <div style={{ marginTop: '150px', color: 'white' }}>
+          {allProductCard ? (
+            <>
+              {allProductCard.map((product) => (<ProductCard product={product} />))}
+            </>
+          ) : (null)}
+        </div>
+
       </div>
-      <a href="/products/1">Product 1 page</a>
       {/* <a href="/">
         <div />
         <div className="allProducts">
