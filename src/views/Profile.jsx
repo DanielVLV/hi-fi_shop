@@ -4,7 +4,7 @@ const ProductCard = require('./ProductCard');
 // const ProductCard = require('./ProductCard');
 
 module.exports = function Profile({ favoriteProducts }) {
-    console.log('во вью', favoriteProducts);
+  console.log('во вью', favoriteProducts);
   return (
     <Layout>
       <div className="profile">
@@ -14,7 +14,7 @@ module.exports = function Profile({ favoriteProducts }) {
         <div className="favorite_products">
           <h2>Favorite products</h2>
           {favoriteProducts?.length ? (
-            favoriteProducts.map((product) => ( <ProductCard product={product}/>
+            favoriteProducts.map((product) => (<ProductCard product={product} />
             ))
           ) : (<h2>Favorite products list is empty </h2>)}
         </div>

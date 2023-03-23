@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 const React = require('react');
 
 module.exports = function ProductCard({ product }) {
@@ -5,7 +6,7 @@ module.exports = function ProductCard({ product }) {
   return (
     <>
       {product && (
-        <div className="product_item">
+        <div className="product_item glass">
           <a href="">
             { arrayImgUrl?.length > 1 ? (arrayImgUrl.map((el, i) => (
               <img src={arrayImgUrl[i]} alt="images" />
@@ -13,7 +14,7 @@ module.exports = function ProductCard({ product }) {
             {' '}
             <div className="prodectName">{product?.productName}</div>
             <div className="price">{product?.price}</div>
-            <button type="submit">buy</button>
+            <button className="button" type="submit">buy</button>
           </a>
         </div>
       )}
