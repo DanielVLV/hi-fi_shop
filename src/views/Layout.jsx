@@ -21,6 +21,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/nav_bar.css" />
         <script defer src="../../js/authorization.js" />
+        <script defer src="../../js/profile.js" />
         <title />
       </head>
       <body>

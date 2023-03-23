@@ -7,14 +7,17 @@ const FeleStore = require('session-file-store')(session);
 router.post('/reg', async (req, res) => {
   try {
     const sikret = await bcrypt.hash(req.body.password, 10);
-    await User.create({username: req.body.name, email: req.body.email,
+    await User.create(
+      {
+        username: req.body.name,
+        email: req.body.email,
         password: sikret,
         phone: req.body.phone,
       },
       {
         returning: true,
         plain: true,
-      }
+      },
     );
     res.sendStatus(200);
   } catch (error) {

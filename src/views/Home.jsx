@@ -10,7 +10,7 @@ module.exports = function Home({ user, allProductCard }) {
       <div style={{ marginTop: '150px', color: 'white' }}>
         {allProductCard ? (
           <>
-            {allProductCard.map((el) => (<ProductCard el={el} />))}
+            {allProductCard.map((product) => (<ProductCard product={product} />))}
           </>
         ) : (null)}
       </div>

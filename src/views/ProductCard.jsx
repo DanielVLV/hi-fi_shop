@@ -1,13 +1,13 @@
 const React = require('react');
 
-module.exports = function ProductCard({ el }) {
+module.exports = function ProductCard({ product }) {
   return (
     <>
-      {el ? (
+      {product ? (
         <>
-          <img src={el?.imagesUrls} alt="images" />
-          <div>{el?.productName}</div>
-          <div>{el?.price}</div>
+          <img src={product?.imagesUrls} alt="images" />
+          <div>{product?.productName}</div>
+          <div>{product?.price}</div>
           <button type="submit">buy</button>
         </>
       ) : (null)}
