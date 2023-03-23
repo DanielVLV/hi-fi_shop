@@ -2,7 +2,6 @@ const React = require('react');
 
 module.exports = function ProductCard({ product }) {
   const arrayImgUrl = product?.imagesUrls.split(', ');
-  console.log(arrayImgUrl);
   return (
     <>
       {product && (
