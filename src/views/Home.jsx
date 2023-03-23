@@ -10,10 +10,25 @@ module.exports = function Home({ user, allProductCard }) {
       <div style={{ marginTop: '150px', color: 'white' }}>
         {allProductCard ? (
           <>
-            {allProductCard.map((el) => (<ProductCard el={el} />))}
+            {allProductCard.map((product) => (<ProductCard product={product} />))}
           </>
         ) : (null)}
       </div>
+      <a href="/products/1">Product 1 page</a>
+      {/* <a href="/">
+        <div />
+        <div className="allProducts">
+          {allProducts
+            ? (
+              <>
+                {allProducts.map((el) => (
+                  <Product el={el} />
+                ))}
+              </>
+            ) : (null)}
+          <User />
+        </div>
+      </a> */}
     </Layout>
   );
 };

@@ -1,14 +1,14 @@
 const React = require('react');
 
-module.exports = function ProductCard({ el }) {
+module.exports = function ProductCard({ product }) {
   return (
     <>
-      {el && (
+      {product && (
         <div className="product_item">
           <a href="">
-            <img src={el?.imagesUrls} alt="images" />
-            <div className="prodectName">{el?.productName}</div>
-            <div className="price">{el?.price}</div>
+            <img src={product?.imagesUrls} alt="images" />
+            <div className="prodectName">{product?.productName}</div>
+            <div className="price">{product?.price}</div>
             <button type="submit">buy</button>
           </a>
         </div>

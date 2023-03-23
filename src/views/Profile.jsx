@@ -1,5 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
+const ProductCard = require('./ProductCard');
+// const ProductCard = require('./ProductCard');
 
 module.exports = function Profile({ favoriteProducts }) {
     console.log('во вью', favoriteProducts);
@@ -12,15 +14,7 @@ module.exports = function Profile({ favoriteProducts }) {
         <div className="favorite_products">
           <h2>Favorite products</h2>
           {favoriteProducts?.length ? (
-            favoriteProducts.map((product) => (
-              <div className="product_container">
-                <a href="#">
-                  {' '}
-                  <img src="#" alt="item_photo" />
-                  <p className="product_name"> {product.productName} </p>
-                </a>
-                <button id={product.id} type="button"> Добавить в корзину </button>
-              </div>
+            favoriteProducts.map((product) => ( <ProductCard product={product}/>
             ))
           ) : (<h2>Favorite products list is empty </h2>)}
         </div>

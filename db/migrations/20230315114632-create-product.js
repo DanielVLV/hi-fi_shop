@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
       },
       imagesUrls: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       propsSrc: {

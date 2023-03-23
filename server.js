@@ -10,7 +10,8 @@ const path = require('path');
 const dbConnect = require('./db/config/dbConnect');
 const authRouter = require('./src/routes/authorization.router');
 const indexRouter = require('./src/routes/index.router');
-const profile = require('./src/routes/profile.router')
+const productsRouter = require('./src/routes/products.router');
+const profile = require('./src/routes/profile.router');
 
 const app = express();
 const { PORT, COOKIE_SECRET } = process.env;
@@ -28,9 +29,8 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 10,
       httpOnly: true,
     },
-  })
+  }),
 );
-
 
 app.use('/', profile);
 
@@ -40,6 +40,7 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 // Routes
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/products', productsRouter);
 
 app.get('*', (req, res) => {
   res.redirect('/');
