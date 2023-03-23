@@ -4,13 +4,11 @@ function checkUsername(username) {
   const regex = /^[a-zA-Zа-яА-Я]+$/;
   if (regex.test(username)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 module.exports = function Layout({ children, user }) {
-  console.log(user);
   return (
     <html lang="en">
       <head>
@@ -22,6 +20,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/nav_footer.css" />
         <link rel="stylesheet" href="/css/form.css" />
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/profile_accordion.css" />
         <script defer src="../../js/authorization.js" />
         <script defer src="../../js/profile.js" />
         <title />
@@ -38,14 +37,14 @@ module.exports = function Layout({ children, user }) {
                   <a className="navbar-item" href="/work">
                     card
                   </a>
-                  <a className="navbar-item">log out</a>
-                  <a className="navbar-item" href="#link">
+                  <a className="navbar-item log-out">log out</a>
+                  <a className="navbar-item" id="user_name" href="/profile">
                     {user?.username}
                   </a>
                 </>
               ) : (
                 <>
-                  <a className="navbar-item" href="/login">
+                  <a className="navbar-item " href="/login">
                     {' '}
                     sign in
                   </a>
@@ -57,7 +56,7 @@ module.exports = function Layout({ children, user }) {
             </div>
           </nav>
         </header>
-        <main className="main">{children}</main>
+        {children}
         <footer className="footer">
           © 2023 "I'm a programmer at my mom's". All rights reserved.
         </footer>
