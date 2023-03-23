@@ -172,7 +172,7 @@ module.exports = {
     },
     {
       productName: 'Krix Volcanix Slim',
-      imagesUrls: './img/products/19.png',
+      imagesUrls: './img/products/19.jpg',
       propsSrc: '../txt/19Krix-Volcanix-Slim.txt',
       price: 339990,
       categoryId: 7,
