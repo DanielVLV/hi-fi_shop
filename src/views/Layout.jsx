@@ -23,6 +23,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/form.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <script defer src="../../js/authorization.js" />
+        <script defer src="../../js/profile.js" />
         <title />
       </head>
       <body>
