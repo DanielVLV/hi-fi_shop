@@ -35,3 +35,7 @@ body {
   color: var(--lavender);
 }
 
+button {
+  background-color: black;
+  cursor: pointer;
+}
