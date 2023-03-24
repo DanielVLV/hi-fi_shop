@@ -26,6 +26,7 @@ module.exports = function Layout({ children, user }) {
         <script defer src="../../js/index.js" />
         <script defer src="../../js/authorization.js" />
         <script defer src="../../js/profile.js" />
+        <script defer src="../../js/product.js" />
         <title />
       </head>
       <body>
@@ -37,7 +38,7 @@ module.exports = function Layout({ children, user }) {
               </a>
               <div className="navbar-menu">
                 <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
-              {user ? (
+                {user ? (
                   <>
                     <a className="navbar-item" href="/orders">Orders</a>
                     <a className="navbar-item log-out" href="#link">log out</a>

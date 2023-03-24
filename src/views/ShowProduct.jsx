@@ -29,7 +29,7 @@ module.exports = function Product(props) {
               </div>
             )}
           </div>
-          <div className="product-main">
+          <div className="product-main" id={product.id}>
             <h1 className="product-title">{product.productName}</h1>
             <p className="product-price">{`${product.price} руб.`}</p>
             <button type="button" id="add-to-favourites-btn">Добавить в избранное</button>
