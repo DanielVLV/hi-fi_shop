@@ -3,9 +3,10 @@ const Layout = require('./Layout');
 
 module.exports = function Product(props) {
   const { product, favorites } = props;
+  console.log('=====!=!=!=====');
   return (
     <Layout {...props}>
-      <div className="container">
+      <div className="container glass">
         <section className="product-info">
           <div className="product-img-container">
             {product.images?.length <= 1 ? (
@@ -32,14 +33,16 @@ module.exports = function Product(props) {
           <div className="product-main">
             <h1 className="product-title">{product.productName}</h1>
             <p className="product-price">{`${product.price} руб.`}</p>
-            <button type="button" id="add-to-favourites-btn">Добавить в избранное</button>
-            <div className="cart-btn-wrapper">
-              <div className="cart-controls">
-                <button className="btn-less" type="button" disabled="true">-</button>
-                <span className="quantity-display">1</span>
-                <button className="btn-more" type="button">+</button>
+            <div className="select">
+              <button className="button button-select" type="button" id="add-to-favourites-btn">В избранное</button>
+              <div className="cart-btn-wrapper">
+                <div className="cart-controls">
+                  <button className="btn-less" type="button" disabled="true">-</button>
+                  <span className="quantity-display">1</span>
+                  <button className="btn-more" type="button">+</button>
+                </div>
+                <button className="button button-select" id="add-to-cart-btn" type="button">В корзину</button>
               </div>
-              <button id="add-to-cart-btn" type="button">В корзину</button>
             </div>
           </div>
         </section>
