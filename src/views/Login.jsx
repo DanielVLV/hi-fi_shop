@@ -5,11 +5,12 @@ const Layout = require('./Layout');
 module.exports = function Login() {
   return (
     <Layout>
-      <div>
-        <input type="email" placeholder="Email" style={{ color: 'black' }} />
-        <input type="password" placeholder="Password" style={{ color: 'black' }} />
-        <button type="submit" style={{ color: 'black' }}>Push Me</button>
-      </div>
+      <form className="login-form glass">
+        <h3>Вход</h3>
+        <input required className="input glass" name="email" type="text" placeholder="E-mail" id="username" />
+        <input required className="input glass" name="password" type="password" placeholder="Password" id="password" />
+        <button className="form_submit button" type="submit">Войти</button>
+      </form>
     </Layout>
   );
 };

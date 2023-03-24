@@ -1,54 +1,59 @@
 require('@babel/register');
 require('dotenv').config();
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
 
 const express = require('express');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 const morgan = require('morgan');
 const path = require('path');
 
-const login = require('./src/routes/login.router');
-const registration = require('./src/routes/registration.router');
-const logout = require('./src/routes/logout');
+const dbConnect = require('./db/config/dbConnect');
+const authRouter = require('./src/routes/authorization.router');
+const indexRouter = require('./src/routes/index.router');
+const productsRouter = require('./src/routes/products.router');
+const cartRouter = require('./src/routes/cart.router');
+const ordersRouter = require('./src/routes/orders.router');
+const profile = require('./src/routes/profile.router');
+const ssr = require('./src/middleware/ssr');
 
 const app = express();
-const { PORT, COOKIE_SEKRET } = process.env;
+const { PORT, COOKIE_SECRET } = process.env;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  session({
+    name: 'Cookie',
+    store: new FileStore(),
+    secret: COOKIE_SECRET || '123',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 10,
+      httpOnly: true,
+    },
+  }),
+);
 
-const sessionConfig = {
-  name: 'Cookie',
-  store: new FileStore(),
-  secret: COOKIE_SEKRET ?? '123',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 10,
-    httpOnly: true,
-  },
-};
-
-app.use(session(sessionConfig));
-app.use(express.static(path.resolve('public')));
+app.use('/', profile);
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(process.cwd(), 'public')));
 
-app.get('/login', login);
-app.get('/logout', logout);
-app.get('/registration', registration);
-app.get('/login', login);
+app.use(ssr);
 
-app.post('/registration', registration);
-app.post('/login', login);
-
-const indexRouter = require('./src/routes/home.router');
-
+// Routes
 app.use('/', indexRouter);
+app.use('/auth', authRouter);
+app.use('/products', productsRouter);
+app.use('/cart', cartRouter);
+app.use('/orders', ordersRouter);
 
-app.get('*', (req, res) => { res.redirect('/'); });
+app.get('*', (req, res) => {
+  res.redirect('/');
+});
 
+dbConnect(); // ? сообщение о подключении к базе данных
 app.listen(PORT, () => {
   console.log(`Сервер запущен порт: ${PORT}`);
 });
