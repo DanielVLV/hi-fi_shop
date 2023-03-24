@@ -23,7 +23,7 @@ module.exports = function Home(props) {
                 <ProductCard product={el} />
               ))
             ) : (
-              <p>Nothing here</p>
+              <p>Пусто...</p>
             )}
           </div>
         </section>

@@ -96,7 +96,9 @@ module.exports = function Product(props) {
           )}
         </section>
         <section className="product-description">
+          <h2>Описание товара:</h2>
           <p className="product-full-description">{product.description}</p>
+          <h2>Характеристики товара:</h2>
           <table>
             {product.properties?.map((el) => (
               <tr>

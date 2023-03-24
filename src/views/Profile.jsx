@@ -8,13 +8,13 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
     <Layout user={user}>
       <div className="profile container">
         <div className='edit_profile'>
-          <a href='/editingprofile'> Edit your profile </a>
+          <a href='/editingprofile'>Редактировать профиль</a>
         </div>
         <div className="account_info">
-          <h2 className="account_information">Account information</h2>
+          <h2 className="account_information">Информация об учетной записи</h2>
         </div>
         <div className="past_orders">
-          <button className="accordion"><b>Your past orders</b></button>
+          <button className="accordion"><b>Ваши прошлые заказы</b></button>
           <div className="panel">
             <div className="panel_content panel_orders">
               {/* {orders?.length ? (
@@ -42,7 +42,7 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
           </div>
         </div>
         <div className="favorite_products">
-          <button className="accordion"><b>Favorite products</b></button>
+          <button className="accordion"><b>Понравившиеся товары</b></button>
           <div className="panel">
             <div className="panel_content">
               {favoriteProducts?.length ? (
@@ -50,14 +50,14 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
                 ))
               ) : (
 
-                <p>Favorite products list is empty </p>
+                <p>Список понравившихся товаров пуст</p>
 
               )}
             </div>
           </div>
         </div>
         <div className="user_setup">
-          <button className="accordion"><b>Your setup</b></button>
+          <button className="accordion"><b>Мои устройства</b></button>
           <div className="panel">
             <div className="panel_content usersetup">
               {user?.usersetup ? (
@@ -67,7 +67,7 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
                 </div>
               ) : (
                 <div>
-                  <p className="user_setup_p">Empty </p>
+                  <p className="user_setup_p">Пусто...</p>
                   {/* <button type="button" id="edit_setup"> edit</button> */}
                 </div>
               )}

@@ -56,8 +56,11 @@ button {
 }
 
 .products-list .product_item {
-  width: 33%;
+  width: 33.33%;
   padding: 20px;
+}
+.main-slider-section {
+  margin-bottom: 30px;
 }
 
 @media (max-width: 1023px) {
@@ -143,3 +146,7 @@ padding: 0 50px 0 50px;
   height: 100%;
   object-fit: cover;
 }
+/* .img-container {
+  background-color: white;
+  border-radius: 5px;
+} */

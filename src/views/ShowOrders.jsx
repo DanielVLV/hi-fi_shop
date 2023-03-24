@@ -9,7 +9,7 @@ module.exports = function ShowOrders(props) {
     // <Layout {...props}>
 
       <div className="container">
-        <h1>My orders</h1>
+        <h1>Мои заказы</h1>
         {orders?.length
           ? orders.map(((el) => (
             <>
@@ -24,10 +24,10 @@ module.exports = function ShowOrders(props) {
               </h4>
               <table>
                 <tr>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
+                  <th>Товары</th>
+                  <th>Цена</th>
+                  <th>Количество</th>
+                  <th>Итого</th>
                 </tr>
                 {el.Products.map((elem) => (
                   <tr>
@@ -38,7 +38,7 @@ module.exports = function ShowOrders(props) {
                   </tr>
                 ))}
                 <tr className="total">
-                  <td colSpan={3}>Total:</td>
+                  <td colSpan={3}>Итого:</td>
                   <td>
                     {el.Products.reduce((acc, item) => acc + (+item.price * item.ProductsOrders.quantity), 0)
                       .toFixed(2)}
@@ -50,7 +50,7 @@ module.exports = function ShowOrders(props) {
             </>
           )))
           : (
-            <p>Nothing here yet</p>
+            <p>Тут пока пусто...</p>
           )}
 
       </div>

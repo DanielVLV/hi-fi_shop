@@ -7,7 +7,7 @@
 }
 .registration-form,
 .login-form {
-    width: 320px;
+    width: 500px;
 }
 .text-shadow {
   text-shadow: 0px 0px 10px var(--metal);

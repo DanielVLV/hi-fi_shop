@@ -40,7 +40,7 @@ module.exports = function Layout({ children, user }) {
                 Главная
               </a>
               <div className="navbar-menu">
-                <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
+                <a className="navbar-item" id="cart-btn" href="/cart">Корзина</a>
                 {user ? (
                   <>
                     {/* <a className="navbar-item" href="/orders">Orders</a> */}
