@@ -19,9 +19,8 @@ router.post('/reg', async (req, res) => {
     );
     res.sendStatus(200);
   } catch (error) {
-    res
-      .status(401)
-      .send({ error: 'Sorry, this email address has already been taken' });
+    console.log(error);
+    res.sendStatus(401);
   }
 });
 
@@ -29,16 +28,17 @@ router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
-    if (!user) res.sendStatus(401);
-    const passwordIsValid = await bcrypt.compare(password, user.password);
-    if (passwordIsValid) {
-      req.session.user = user;
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(401);
+    if (!user) {
+      return res.status(401).send('Неверный адрес электронной почты или пароль');
     }
+    const passwordIsValid = await bcrypt.compare(password, user.password);
+    if (!passwordIsValid) {
+      return res.status(401).send('Неверный адрес электронной почты или пароль');
+    }
+    req.session.user = user;
+    res.sendStatus(200);
   } catch (error) {
-    console.log(error);
+    res.status(500).send('Ошибка сервера');
   }
 });
 

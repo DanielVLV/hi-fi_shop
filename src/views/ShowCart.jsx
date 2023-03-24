@@ -9,15 +9,15 @@ module.exports = function ShowCart(props) {
     <Layout {...props}>
 
       <div className="container">
-        <h1>Cart</h1>
+        <h1>Корзина</h1>
         {cart ? (
           <>
             <table>
               <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th>Товары</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Итого</th>
               </tr>
               {cart.map((el) => (
                 <tr>
@@ -28,7 +28,7 @@ module.exports = function ShowCart(props) {
                 </tr>
               ))}
               <tr className="total">
-                <td colSpan={3}>Total:</td>
+                <td colSpan={3}>Итого:</td>
                 <td>
                   {cart.reduce((acc, el) => acc + (+el.price * el.productCount), 0)
                     .toFixed(2)}
@@ -36,12 +36,12 @@ module.exports = function ShowCart(props) {
                 </td>
               </tr>
             </table>
-            <button className="btn btn-order" id="order-btn">Confirm order</button>
-            <button className="btn btn-clear-cart" id="clear-cart-btn">Clear cart</button>
+            <button className="btn btn-order" id="order-btn">Оформить заказ</button>
+            <button className="btn btn-clear-cart" id="clear-cart-btn">Очистить корзину</button>
 
           </>
         ) : (
-          <p>Nothing here yet</p>
+          <p>Тут пока пусто..</p>
         )}
 
       </div>

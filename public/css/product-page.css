@@ -14,9 +14,29 @@
   width: 50%;
   position: relative;
 }
+.cart-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
 
 .product-main {
+  display: flex;
+  align-items: center;
   width: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.select {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-select {
+  width: 200px;
 }
 
 .mySwiper .swiper-slide {

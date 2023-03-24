@@ -37,14 +37,14 @@ module.exports = function Layout({ children, user }) {
           <div className="container">
             <nav className="navbar">
               <a id="logo" className="navbar-item" href="/">
-                home
+                Главная
               </a>
               <div className="navbar-menu">
-                <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
+                <a className="navbar-item" id="cart-btn" href="/cart">Корзина</a>
                 {user ? (
                   <>
                     {/* <a className="navbar-item" href="/orders">Orders</a> */}
-                    <a className="navbar-item log-out" href="#link">log out</a>
+                    <a className="navbar-item log-out" href="#link">Выйти</a>
                     <a className="navbar-item" id="user_name" href="/profile">
                       {user?.username}
                     </a>
@@ -53,10 +53,10 @@ module.exports = function Layout({ children, user }) {
                   <>
                     <a className="navbar-item" href="/login">
                       {' '}
-                      sign in
+                      Войти
                     </a>
                     <a className="navbar-item" href="/registration">
-                      sign up
+                      Зарегистрироваться
                     </a>
                   </>
                 )}
@@ -66,7 +66,7 @@ module.exports = function Layout({ children, user }) {
         </header>
         <main className="main">{children}</main>
         <footer className="footer onlyFooter">
-          © 2023 "I'm a programmer at my mom's". All rights reserved.
+          © 2023 "Я у мамы программист". Все права защищены.
         </footer>
       </body>
     </html>
