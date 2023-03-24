@@ -1,4 +1,3 @@
-'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -7,14 +6,14 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       productName: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       imagesUrls: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       propsSrc: {
@@ -30,11 +29,14 @@ module.exports = {
         allowNull: false,
         references: {
           model: {
-            tableName: "Categories",
+            tableName: 'Categories',
           },
-          key: "id",
+          key: 'id',
         },
-        onDelete: "cascade",
+        onDelete: 'cascade',
+      },
+      isAvailable: {
+        type: 'boolean',
       },
       createdAt: {
         allowNull: false,
@@ -45,10 +47,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: new Date(),
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Products');
-  }
+  },
 };
