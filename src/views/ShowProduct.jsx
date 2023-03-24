@@ -56,9 +56,6 @@ module.exports = function Product(props) {
           </table>
         </section>
       </div>
-      <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" />
-      <script defer src="../js/swiper.js" />
-
     </Layout>
   );
 };
