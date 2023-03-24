@@ -22,6 +22,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/product-page.css" />
         <link rel="stylesheet" href="/css/form.css" />
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/profile_accordion.css" />
         <script defer src="../../js/authorization.js" />
         <script defer src="../../js/profile.js" />
         <title />
@@ -59,7 +60,7 @@ module.exports = function Layout({ children, user }) {
             </nav>
           </div>
         </header>
-        <main className="main">{children}</main>
+        {children}
         <footer className="footer">
           © 2023 "I'm a programmer at my mom's". All rights reserved.
         </footer>

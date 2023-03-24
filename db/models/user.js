@@ -34,6 +34,9 @@ module.exports = (sequelize, DataTypes) => {
     phone: {
       type: DataTypes.STRING,
     },
+    usersetup: {
+      type: DataTypes.STRING,
+    },
   }, {
     sequelize,
     modelName: 'User',

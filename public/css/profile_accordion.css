@@ -1,0 +1,47 @@
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #2d3142;
+    color: var(--lavender);
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    width: 20vw;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: var(--french-gray);
+    color: var(--metal);
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    background-color: var(--metal);
+    color: var(--french-gray);
+    display: none;
+    overflow: hidden;
+    width: auto;
+    min-width: 20vw;
+    margin-left: 20vw;
+  }
+
+  .account_information {
+    width: 20vw;
+    display: inline-block;
+  }
+
+  .profile.container {
+    margin-left: 18px;
+  }
+
+  .panel_content { 
+    display: flex;
+    flex-direction: row;
+  }
+  /* .panel {
+    display: flex;
+    flex-direction: row;
+  } */
