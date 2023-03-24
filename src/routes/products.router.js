@@ -2,6 +2,7 @@ const router = require('express').Router();
 const renderTemplate = require('../renderTemplate');
 const ShowProduct = require('../views/ShowProduct');
 const { Product } = require('../../db/models');
+const { ProductToUser } = require('../../db/models');
 const fs = require('fs').promises;
 
 router.get('/:id', async (req, res) => {
@@ -26,6 +27,18 @@ router.get('/:id', async (req, res) => {
   console.log(product);
 
   renderTemplate(ShowProduct, { product }, res);
+});
+
+router.post('/favoriteproduct', async (req, res) => {
+  const user = req.session?.user;
+  const userId = user?.id;
+  const {productId} = req.body;
+  try {
+    const addedItem = await ProductToUser.create(({userId, productId}));
+    
+  } catch (error) {
+    
+  }
 });
 
 module.exports = router;
