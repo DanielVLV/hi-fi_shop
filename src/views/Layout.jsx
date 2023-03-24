@@ -62,7 +62,7 @@ module.exports = function Layout({ children, user }) {
           </div>
         </header>
         <main className="main">{children}</main>
-        <footer className="footer">
+        <footer className="footer onlyFooter">
           © 2023 "I'm a programmer at my mom's". All rights reserved.
         </footer>
       </body>
