@@ -44,7 +44,6 @@ router.get('/:id', async (req, res) => {
       categoryId,
     },
   });
-  console.log(similarData);
   const similarData1 = similarData.map((el) => el.get());
   const similar = similarData1.map((el) => {
     el.images = el.imagesUrls.split(', ');

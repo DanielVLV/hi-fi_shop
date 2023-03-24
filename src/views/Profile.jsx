@@ -46,7 +46,30 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
           <div className="panel">
             <div className="panel_content">
               {favoriteProducts?.length ? (
-                favoriteProducts.map((product) => (<ProductCard product={product} />
+                favoriteProducts.map((el) => (
+                  <div className="product_item glass">
+                    <a href={`/products/${el.id}`}>
+                      <div className="img-container">
+                        <div className="img-wrapper">
+                          <img src={`.${el.images?.[0]}`} alt="product-photo" />
+                        </div>
+                      </div>
+                      <p className="product-title">{el.productName}</p>
+                      <p className="product-price">{`${el.price} руб.`}</p>
+                      {el.isAvailable ? (
+                        <div className="cart-btn-wrapper">
+                          <div className="cart-controls">
+                            <button className="btn-less" type="button">-</button>
+                            <span className="quantity-display">1</span>
+                            <button className="btn-more" type="button">+</button>
+                          </div>
+                          <button className="add-to-cart-btn" id="add-to-cart-btn" type="button" data-product-id={`${el.id}`} data-price={`${el.price}`}>В корзину</button>
+                        </div>
+                      ) : (
+                        <p>Нет в наличии</p>
+                      )}
+                    </a>
+                  </div>
                 ))
               ) : (
 

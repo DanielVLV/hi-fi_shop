@@ -13,12 +13,18 @@ router.get('/profile', isAuth, async (req, res) => {
   const userId = req.session?.user?.id;
   const user = await User.findOne({ where: { id: userId } });
   console.log('rout ===>', user);
-  const favoriteProducts = await Product.findAll({
+  const favoriteProducts2 = await Product.findAll({
     include: {
       model: User,
       where: { id: userId },
     },
   });
+  const favoriteProducts1 = favoriteProducts2.map((el) => el.get());
+  const favoriteProducts = favoriteProducts1.map((el) => {
+    el.images = el.imagesUrls.split(', ');
+    return el;
+  });
+
   const pastOrders = await Order.findAll({
     where: {
       userId: req.session.user.id,
