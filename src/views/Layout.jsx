@@ -40,8 +40,8 @@ module.exports = function Layout({ children, user }) {
                     <a className="navbar-item" href="/work">
                       card
                     </a>
-                    <a className="navbar-item">log out</a>
-                    <a className="navbar-item" href="#link">
+                    <a className="navbar-item log-out" href="#link">log out</a>
+                    <a className="navbar-item" id="user_name" href="/profile">
                       {user?.username}
                     </a>
                   </>
@@ -60,7 +60,7 @@ module.exports = function Layout({ children, user }) {
             </nav>
           </div>
         </header>
-        {children}
+        <main className="main">{children}</main>
         <footer className="footer">
           © 2023 "I'm a programmer at my mom's". All rights reserved.
         </footer>
