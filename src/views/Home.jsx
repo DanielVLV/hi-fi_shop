@@ -3,14 +3,16 @@ const React = require('react');
 const Layout = require('./Layout');
 
 const ProductCard = require('./ProductCard');
-const SwiperHomePage = require('./swiperHomePage');
+const SwiperHomePage = require('./SwiperHomePage');
 
 module.exports = function Home(props) {
   const { user, products, categories } = props;
   return (
     <Layout {...props}>
       <div className="container">
-        <section className="main-slider-section" />
+        <section className="main-slider-section">
+          <SwiperHomePage />
+        </section>
         <section className="products-section">
           <div className="filters">
             <h4>Фильтры</h4>

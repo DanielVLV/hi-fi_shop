@@ -3,8 +3,9 @@ const Layout = require('./Layout');
 const ProductCard = require('./ProductCard');
 
 module.exports = function Product(props) {
-  const { product, favoriteProduct, user } = props;
-  const { product, similar } = props;
+  const {
+    product, favoriteProduct, similar, user,
+  } = props;
   return (
     <Layout {...props}>
       <div className="container">
@@ -43,18 +44,18 @@ module.exports = function Product(props) {
               <div className="cart-btn-wrapper">
                 <div className="cart-controls">
                   {user ? (
-                  <>
-                    {' '}
-                    <button className="btn-less" type="button">-</button>
-  
-                    <span className="quantity-display">1</span>
-  
-                    <button className="btn-more" type="button">+</button>
+                    <>
+                      {' '}
+                      <button className="btn-less" type="button">-</button>
+
+                      <span className="quantity-display">1</span>
+
+                      <button className="btn-more" type="button">+</button>
                       <button className="add-to-cart-btn" id="add-to-cart-btn" type="button" data-product-id={`${product.id}`} data-price={`${product.price}`}>В корзину</button>
-                  </>
-                ) : (<span />)}
-              </div>
+                    </>
+                  ) : (<span />)}
                 </div>
+              </div>
             ) : (
               <p>Нет в наличии</p>
             )}
