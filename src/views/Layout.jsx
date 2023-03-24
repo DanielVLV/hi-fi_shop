@@ -1,15 +1,14 @@
 const React = require('react');
 
-function checkUsername(username) {
-  const regex = /^[a-zA-Zа-яА-Я]+$/;
-  if (regex.test(username)) {
-    return true;
-  }
-  return false;
-}
+// function checkUsername(username) {
+//   const regex = /^[a-zA-Zа-яА-Я]+$/;
+//   if (regex.test(username)) {
+//     return true;
+//   }
+//   return false;
+// }
 
 module.exports = function Layout({ children, user }) {
-  console.log(user);
   return (
     <html lang="en">
       <head>
@@ -23,6 +22,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/product-page.css" />
         <link rel="stylesheet" href="/css/form.css" />
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/profile_accordion.css" />
         <script defer src="../../js/index.js" />
         <script defer src="../../js/authorization.js" />
         <script defer src="../../js/profile.js" />
@@ -30,36 +30,38 @@ module.exports = function Layout({ children, user }) {
       </head>
       <body>
         <header className="header">
-          <nav className="navbar">
-            <a id="logo" className="navbar-item" href="/">
-              home
-            </a>
-            <div className="navbar-menu">
-              <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
+          <div className="container">
+            <nav className="navbar">
+              <a id="logo" className="navbar-item" href="/">
+                home
+              </a>
+              <div className="navbar-menu">
+                <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
               {user ? (
-                <>
-                  <a className="navbar-item" href="/orders">Orders</a>
+                  <>
+                    <a className="navbar-item" href="/orders">Orders</a>
                   <a className="navbar-item" href="/work">
-                    card
-                  </a>
-                  <a className="navbar-item">log out</a>
-                  <a className="navbar-item" href="#link">
-                    {user?.username}
-                  </a>
-                </>
-              ) : (
-                <>
-                  <a className="navbar-item" href="/login">
-                    {' '}
-                    sign in
-                  </a>
-                  <a className="navbar-item" href="/registration">
-                    sign up
-                  </a>
-                </>
-              )}
-            </div>
-          </nav>
+                      card
+                    </a>
+                    <a className="navbar-item log-out" href="#link">log out</a>
+                    <a className="navbar-item" id="user_name" href="/profile">
+                      {user?.username}
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a className="navbar-item" href="/login">
+                      {' '}
+                      sign in
+                    </a>
+                    <a className="navbar-item" href="/registration">
+                      sign up
+                    </a>
+                  </>
+                )}
+              </div>
+            </nav>
+          </div>
         </header>
         <main className="main">{children}</main>
         <footer className="footer">

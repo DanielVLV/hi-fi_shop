@@ -8,16 +8,29 @@
   --blue: #b0d7ffff;
   --blue_2: rgb(88, 108, 128);
 }
-
+html {
+  height: 100%;
+  /* background: conic-gradient(from 240deg at 30%  60%, #5E5E5E 0%, #666666 30%, #57B4BD 50%, #787878 70%, #5E5E5E 100%); */
+  /* background: conic-gradient(from 1deg at 50%  50%, #eae8ff 0%, #e4e2f8 3.4482758620689653%, #deddf1 6.896551724137931%, #d9d7ea 10.344827586206897%, #d3d1e3 13.793103448275861%, #cdccdc 17.24137931034483%, #c7c6d5 20.689655172413794%, #c2c0ce 24.137931034482758%, #bcbbc7 27.586206896551722%, #b7b5c1 31.03448275862069%, #b1b0ba 34.48275862068966%, #aeadb6 37.93103448275862%, #b1b0ba 41.37931034482759%, #b4b3be 44.827586206896555%, #b8b6c2 48.275862068965516%, #bbbac6 51.724137931034484%, #bebdca 55.172413793103445%, #c2c0ce 58.620689655172406%, #c5c3d2 62.06896551724138%, #c8c7d6 65.51724137931035%, #cccada 68.96551724137932%, #cfcdde 72.41379310344827%, #d2d1e2 75.86206896551724%, #d6d4e6 79.3103448275862%, #d9d7ea 82.75862068965517%, #dcdbee 86.20689655172413%, #e0def3 89.65517241379311%, #e3e1f7 93.10344827586206%, #e7e5fb 96.55172413793103%, #eae8ff 100%); */
+  background: conic-gradient(from 233deg at 30%  70%, #2D3142 0%, RGB(88, 108, 128) 30%, #B0D7FF 50%, RGB(88, 108, 128) 70%, #2D3142 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 body {
-  background-color: var(--metal);
-  /* background-image: url(../img/ming-BXKF-rHHbT4-unsplash.jpg); */
+  /* background-color: var(--blue_2); */
   font-family: 'Sono', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .main {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
 }
+/* .justify {
+  justify-content: center;
+} */
 * {
   color: var(--lavender);
 }
