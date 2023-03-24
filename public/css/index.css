@@ -39,3 +39,65 @@ button {
   background-color: black;
   cursor: pointer;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.products-section {
+  display: flex;
+}
+
+.filters {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.products-list .product_item {
+  width: 33%;
+  padding: 20px;
+}
+
+@media (max-width: 1023px) {
+  .products-list .product_item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .products-list .product_item {
+    width: 100%;
+  }
+}
+
+.cart-controls {
+  display: flex;
+  margin-right: 20px;
+}
+
+.quantity-display {
+  display: flex;
+  min-width: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-cart-btn {
+  flex-shrink: 0;
+}
+
+.similar-list {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.similar-list .product_item {
+  width: 300px;
+  flex-shrink: 0;
+}

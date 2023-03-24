@@ -3,6 +3,7 @@ const renderTemplate = require('../renderTemplate');
 const ShowProduct = require('../views/ShowProduct');
 const { Product } = require('../../db/models');
 const { ProductToUser } = require('../../db/models');
+
 const fs = require('fs').promises;
 
 router.get('/:id', async (req, res) => {
@@ -24,20 +25,31 @@ router.get('/:id', async (req, res) => {
   // console.log('description---->', description);
   product.properties = propsArr.slice(0, -1).map((el) => el.split(':\t'));
   // console.log('props2---->', properties);
-  console.log(product);
+  // console.log(product);
+  const { categoryId } = product;
+  const similarData = await Product.findAll({
+    where: {
+      categoryId,
+    },
+  });
+  console.log(similarData);
+  const similarData1 = similarData.map((el) => el.get());
+  const similar = similarData1.map((el) => {
+    el.images = el.imagesUrls.split(', ');
+    return el;
+  });
 
-  renderTemplate(ShowProduct, { product }, res);
+  renderTemplate(ShowProduct, { product, similar }, res);
 });
 
 router.post('/favoriteproduct', async (req, res) => {
   const user = req.session?.user;
   const userId = user?.id;
-  const {productId} = req.body;
+  const { productId } = req.body;
   try {
-    const addedItem = await ProductToUser.create(({userId, productId}));
-    
+    const addedItem = await ProductToUser.create(({ userId, productId }));
   } catch (error) {
-    
+
   }
 });
 
