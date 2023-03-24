@@ -41,9 +41,9 @@ module.exports = function Layout({ children, user }) {
               </a>
               <div className="navbar-menu">
                 <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
-                  {user ? (
+                {user ? (
                   <>
-                    <a className="navbar-item" href="/orders">Orders</a>
+                    {/* <a className="navbar-item" href="/orders">Orders</a> */}
                     <a className="navbar-item log-out" href="#link">log out</a>
                     <a className="navbar-item" id="user_name" href="/profile">
                       {user?.username}
