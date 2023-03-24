@@ -75,7 +75,7 @@ router.post('/api/editingprofile', isAuth, async (req, res) => {
     const updateduser = await User.update({
       username, email, phone, usersetup,
     }, { where: { id: userId } });
-    res.sendStatus(200);
+    res.redirect('/profile');
   } catch (error) {
     console.log(error);
     res.status(401)

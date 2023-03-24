@@ -6,7 +6,7 @@ module.exports = function ShowOrders(props) {
     orders
   } = props;
   return (
-    <Layout {...props}>
+    // <Layout {...props}>
 
       <div className="container">
         <h1>My orders</h1>
@@ -54,6 +54,6 @@ module.exports = function ShowOrders(props) {
           )}
 
       </div>
-    </Layout>
+    // </Layout>
   );
 };

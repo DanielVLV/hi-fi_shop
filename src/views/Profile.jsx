@@ -4,18 +4,20 @@ const ProductCard = require('./ProductCard');
 // const ProductCard = require('./ProductCard');
 
 module.exports = function Profile({ favoriteProducts, user, orders }) {
-  console.log(user);
   return (
     <Layout user={user}>
       <div className="profile container">
+        <div className='edit_profile'>
+          <a href='/editingprofile'> Edit your profile </a>
+        </div>
         <div className="account_info">
           <h2 className="account_information">Account information</h2>
         </div>
         <div className="past_orders">
           <button className="accordion"><b>Your past orders</b></button>
           <div className="panel">
-            <div className="panel_content">
-              {orders?.length ? (
+            <div className="panel_content panel_orders">
+              {/* {orders?.length ? (
                 orders?.map((order, index) => order.Products.map((prod) => (
                   <table>
                     <tr>
@@ -35,7 +37,7 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
                   </table>
 
                 )))
-              ) : (<span>Empty</span>)}
+              ) : (<span>Empty</span>)} */}
             </div>
           </div>
         </div>
@@ -61,12 +63,12 @@ module.exports = function Profile({ favoriteProducts, user, orders }) {
               {user?.usersetup ? (
                 <div>
                   <p className="user_setup_p">{user?.usersetup}</p>
-                  <button type="button" id="edit_setup"> edit</button>
+                  {/* <button type="button" id="edit_setup"> edit</button> */}
                 </div>
               ) : (
                 <div>
                   <p className="user_setup_p">Empty </p>
-                  <button type="button" id="edit_setup"> edit</button>
+                  {/* <button type="button" id="edit_setup"> edit</button> */}
                 </div>
               )}
             </div>
