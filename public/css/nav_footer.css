@@ -16,6 +16,10 @@
   font-size: 0.8rem;
   color: var(--lavender);
 }
+
+.onlyFooter {
+  padding: 30px 0 30px 0;
+}
 .header {
   margin-bottom: 30px;
 }

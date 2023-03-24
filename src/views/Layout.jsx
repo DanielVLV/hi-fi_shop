@@ -23,8 +23,13 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/form.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/profile_accordion.css" />
+        <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" />
+        <script defer src="../js/swiper.js" />
+        <script defer src="../../js/index.js" />
         <script defer src="../../js/authorization.js" />
         <script defer src="../../js/profile.js" />
+
+        <script defer src="../../js/product.js" />
         <title />
       </head>
       <body>
@@ -35,11 +40,10 @@ module.exports = function Layout({ children, user }) {
                 Главная
               </a>
               <div className="navbar-menu">
+                <a className="navbar-item" id="cart-btn" href="/cart">Cart</a>
                 {user ? (
                   <>
-                    <a className="navbar-item" href="/work">
-                      card
-                    </a>
+                    {/* <a className="navbar-item" href="/orders">Orders</a> */}
                     <a className="navbar-item log-out" href="#link">Выйти</a>
                     <a className="navbar-item" id="user_name" href="/profile">
                       {user?.username}
@@ -61,7 +65,7 @@ module.exports = function Layout({ children, user }) {
           </div>
         </header>
         <main className="main">{children}</main>
-        <footer className="footer">
+        <footer className="footer onlyFooter">
           © 2023 "Я у мамы программист". Все права защищены.
         </footer>
       </body>
