@@ -3,37 +3,32 @@ const React = require('react');
 const Layout = require('./Layout');
 
 const ProductCard = require('./ProductCard');
-const SwiperHomePage = require('./swiperHomePage');
+const SwiperHomePage = require('./SwiperHomePage');
 
-module.exports = function Home({ user, allProductCard }) {
+module.exports = function Home(props) {
+  const { user, products, categories } = props;
   return (
-    <Layout user={user}>
+    <Layout {...props}>
       <div className="container">
-      <SwiperHomePage />
-        <a href="/products/1">Product 1 page</a>
-        <div style={{ marginTop: '150px', color: 'white' }}>
-          {allProductCard ? (
-            <>
-              {allProductCard.map((product) => (<ProductCard product={product} />))}
-            </>
-          ) : (null)}
-        </div>
+        <section className="main-slider-section">
+          <SwiperHomePage />
+        </section>
+        <section className="products-section">
+          <div className="filters">
+            <h4>Фильтры</h4>
+          </div>
+          <div className="products-list">
+            {products.length ? (
+              products.map((el) => (
+                <ProductCard product={el} />
+              ))
+            ) : (
+              <p>Nothing here</p>
+            )}
+          </div>
+        </section>
 
       </div>
-      {/* <a href="/">
-        <div />
-        <div className="allProducts">
-          {allProducts
-            ? (
-              <>
-                {allProducts.map((el) => (
-                  <Product el={el} />
-                ))}
-              </>
-            ) : (null)}
-          <User />
-        </div>
-      </a> */}
     </Layout>
   );
 };

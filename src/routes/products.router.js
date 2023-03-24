@@ -4,6 +4,7 @@ const renderTemplate = require('../renderTemplate');
 const ShowProduct = require('../views/ShowProduct');
 const { Product } = require('../../db/models');
 const { ProductToUser } = require('../../db/models');
+
 const fs = require('fs').promises;
 
 router.get('/:id', async (req, res) => {
@@ -35,8 +36,22 @@ router.get('/:id', async (req, res) => {
   } else {
     favoriteProduct = {};
   }
+  // console.log('props2---->', properties);
+  // console.log(product);
+  const { categoryId } = product;
+  const similarData = await Product.findAll({
+    where: {
+      categoryId,
+    },
+  });
+  console.log(similarData);
+  const similarData1 = similarData.map((el) => el.get());
+  const similar = similarData1.map((el) => {
+    el.images = el.imagesUrls.split(', ');
+    return el;
+  });
 
-  renderTemplate(ShowProduct, { product, favoriteProduct, user }, res);
+  renderTemplate(ShowProduct, { product, similar, favoriteProduct, user }, res);
 });
 
 router.post('/favoriteproduct', isAuth, async (req, res) => {

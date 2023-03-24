@@ -8,9 +8,14 @@ const Login = require('../views/Login');
 
 router.get('/', async (req, res) => {
   try {
-    const { user } = req.session;
-    const allProductCard = await Product.findAll({ raw: true });
-    renderTemplate(Home, { allProductCard, user }, res);
+    const productsData = await Product.findAll();
+    const productsData1 = productsData.map((el) => el.get());
+    const products = productsData1.map((el) => {
+      el.images = el.imagesUrls.split(', ');
+      return el;
+    });
+
+    res.render(Home, { products });
   } catch (error) {
     console.log(error);
   }

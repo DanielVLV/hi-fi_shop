@@ -36,7 +36,7 @@ module.exports = {
         onDelete: 'cascade',
       },
       isAvailable: {
-        type: 'boolean',
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,

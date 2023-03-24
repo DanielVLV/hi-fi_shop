@@ -1,6 +1,7 @@
 document.addEventListener('click', async (evt) => {
   if (evt.target.classList.contains('add-to-cart-btn')) {
     evt.preventDefault();
+    evt.stopPropagation();
 
     const buyBtn = evt.target;
     const { productId } = buyBtn.dataset;
@@ -25,6 +26,8 @@ document.addEventListener('click', async (evt) => {
   }
 
   if (evt.target.classList.contains('btn-less')) {
+    evt.preventDefault();
+    evt.stopPropagation();
     const parent = evt.target.closest('.cart-btn-wrapper');
 
     const quantityElem = parent.querySelector('.quantity-display');
@@ -35,6 +38,8 @@ document.addEventListener('click', async (evt) => {
   }
 
   if (evt.target.classList.contains('btn-more')) {
+    evt.preventDefault();
+    evt.stopPropagation();
     const parent = evt.target.closest('.cart-btn-wrapper');
 
     const quantityElem = parent.querySelector('.quantity-display');

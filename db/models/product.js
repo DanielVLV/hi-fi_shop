@@ -40,6 +40,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    isAvailable: {
+      type: DataTypes.BOOLEAN,
+    },
   }, {
     sequelize,
     modelName: 'Product',
