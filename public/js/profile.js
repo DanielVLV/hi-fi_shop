@@ -38,11 +38,13 @@ if (editSetupBtn) {
     const userSetupContainer = editSetupBtn.closest('div');
     const userSetupValue = document.querySelector('.user_setup_p').textContent;
     const inputArea = document.createElement('input');
-    const 
+    // const applyEdditBtn = document.createElement('button');
+    // applyEdditBtn.setAttribute('type', 'submit');
     inputArea.setAttribute('type', 'text');
     inputArea.setAttribute('value', userSetupValue);
     inputArea.setAttribute('class', 'usersetup_input_area');
     userSetupContainer.replaceChildren();
     userSetupContainer.appendChild(inputArea);
+    // userSetupContainer.appendChild(applyEdditBtn);
   });
 }
