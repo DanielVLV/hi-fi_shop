@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../db/models');
 const bcrypt = require('bcrypt');
-const session = require('express-session');
-const FeleStore = require('session-file-store')(session);
+const { User } = require('../../db/models');
 
 router.post('/reg', async (req, res) => {
   try {
@@ -28,27 +26,34 @@ router.post('/reg', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  const user = await User.findOne({ where: { email } });
-  if (!user) res.sendStatus(401);
-  const passwordIsValid = await bcrypt.compare(password, user.password);
-  if (passwordIsValid) {
-    req.session.user = user;
-    res.sendStatus(200);
-  } else {
-    res.sendStatus(401);
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ where: { email } });
+    if (!user) res.sendStatus(401);
+    const passwordIsValid = await bcrypt.compare(password, user.password);
+    if (passwordIsValid) {
+      req.session.user = user;
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(401);
+    }
+  } catch (error) {
+    console.log(error);
   }
 });
 
 router.get('/logout', (req, res) => {
-  req.session.destroy((e) => {
-    if (e) {
-      return;
-    }
-    res.clearCookie('Cookie');
-    res.json({ message: 'logout', loggedout: true });
-  });
+  try {
+    req.session.destroy((e) => {
+      if (e) {
+        return;
+      }
+      res.clearCookie('Cookie');
+      res.json({ message: 'logout', loggedout: true });
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

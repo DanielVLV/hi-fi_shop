@@ -1,11 +1,14 @@
 /* * ---------------------------------------Формы------------------------- */
-.registration-form,
-.login-form {
+.glass {
   background-color: rgba(67, 71, 92, 0.3);
-  border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 60px var(--metal);
+  border-radius: 10px;
   padding: 50px 35px;
+}
+.registration-form,
+.login-form {
+    width: 320px;
 }
 
 form > h3 {
@@ -19,30 +22,31 @@ form > h3 {
 
 .input {
   display: block;
-  height: 60px;
+  /* height: 60px; */
   width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 5px;
   margin-top: 30px;
   font-size: 20px;
   font-weight: 300;
-  padding: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 ::placeholder {
   color: var(--lavender);
-  padding-left: 20px;
 }
-.form_submit {
+.button  {
   border: none;
-  width: 326px;
-  height: 60px;
   cursor: pointer;
   margin-top: 30px;
   background-color: var(--lavender);
   color: var(--metal);
-  padding: 15px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+.form_submit {
+  width: 100%;
   font-size: 23px;
   font-weight: 400;
-  border-radius: 5px;
 }

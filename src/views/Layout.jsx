@@ -1,12 +1,12 @@
 const React = require('react');
 
-function checkUsername(username) {
-  const regex = /^[a-zA-Zа-яА-Я]+$/;
-  if (regex.test(username)) {
-    return true;
-  }
-  return false;
-}
+// function checkUsername(username) {
+//   const regex = /^[a-zA-Zа-яА-Я]+$/;
+//   if (regex.test(username)) {
+//     return true;
+//   }
+//   return false;
+// }
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -29,36 +29,38 @@ module.exports = function Layout({ children, user }) {
       </head>
       <body>
         <header className="header">
-          <nav className="navbar">
-            <a id="logo" className="navbar-item" href="/">
-              home
-            </a>
-            <div className="navbar-menu">
-              {user ? (
-                <>
-                  <a className="navbar-item" href="/work">
-                    card
-                  </a>
-                  <a className="navbar-item log-out">log out</a>
-                  <a className="navbar-item" id="user_name" href="/profile">
-                    {user?.username}
-                  </a>
-                </>
-              ) : (
-                <>
-                  <a className="navbar-item " href="/login">
-                    {' '}
-                    sign in
-                  </a>
-                  <a className="navbar-item" href="/registration">
-                    sign up
-                  </a>
-                </>
-              )}
-            </div>
-          </nav>
+          <div className="container">
+            <nav className="navbar">
+              <a id="logo" className="navbar-item" href="/">
+                home
+              </a>
+              <div className="navbar-menu">
+                {user ? (
+                  <>
+                    <a className="navbar-item" href="/work">
+                      card
+                    </a>
+                    <a className="navbar-item log-out" href="#link">log out</a>
+                    <a className="navbar-item" id="user_name" href="/profile">
+                      {user?.username}
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a className="navbar-item" href="/login">
+                      {' '}
+                      sign in
+                    </a>
+                    <a className="navbar-item" href="/registration">
+                      sign up
+                    </a>
+                  </>
+                )}
+              </div>
+            </nav>
+          </div>
         </header>
-        {children}
+        <main className="main">{children}</main>
         <footer className="footer">
           © 2023 "I'm a programmer at my mom's". All rights reserved.
         </footer>
