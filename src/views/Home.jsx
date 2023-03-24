@@ -7,7 +7,6 @@ const ProductCard = require('./ProductCard');
 module.exports = function Home({ user, allProductCard }) {
   return (
     <Layout user={user}>
-      <main className="main">
       <div style={{ marginTop: '150px', color: 'white' }}>
         {allProductCard ? (
           <>
