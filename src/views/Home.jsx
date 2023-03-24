@@ -3,6 +3,7 @@ const React = require('react');
 const Layout = require('./Layout');
 
 const ProductCard = require('./ProductCard');
+const SwiperHomePage = require('./swiperHomePage');
 
 module.exports = function Home(props) {
   const { user, products, categories } = props;

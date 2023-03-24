@@ -3,6 +3,7 @@ const Layout = require('./Layout');
 const ProductCard = require('./ProductCard');
 
 module.exports = function Product(props) {
+  const { product, favoriteProduct, user } = props;
   const { product, similar } = props;
   return (
     <Layout {...props}>
@@ -35,16 +36,25 @@ module.exports = function Product(props) {
           <div className="product-main" id={product.id}>
             <h1 className="product-title">{product.productName}</h1>
             <p className="product-price">{`${product.price} руб.`}</p>
-            <button type="button" id="add-to-favourites-btn">Добавить в избранное</button>
+            {user ? (favoriteProduct?.id ? (<button type="button" id="added-to-favorite">В избранном</button>
+            ) : (<button type="button" id="add-to-favourites-btn">Добавить в избранное</button>)
+            ) : (<span />)}
             {product.isAvailable ? (
               <div className="cart-btn-wrapper">
                 <div className="cart-controls">
-                  <button className="btn-less" type="button">-</button>
-                  <span className="quantity-display">1</span>
-                  <button className="btn-more" type="button">+</button>
-                </div>
-                <button className="add-to-cart-btn" id="add-to-cart-btn" type="button" data-product-id={`${product.id}`} data-price={`${product.price}`}>В корзину</button>
+                  {user ? (
+                  <>
+                    {' '}
+                    <button className="btn-less" type="button">-</button>
+  
+                    <span className="quantity-display">1</span>
+  
+                    <button className="btn-more" type="button">+</button>
+                      <button className="add-to-cart-btn" id="add-to-cart-btn" type="button" data-product-id={`${product.id}`} data-price={`${product.price}`}>В корзину</button>
+                  </>
+                ) : (<span />)}
               </div>
+                </div>
             ) : (
               <p>Нет в наличии</p>
             )}
@@ -96,9 +106,6 @@ module.exports = function Product(props) {
           </table>
         </section>
       </div>
-      <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" />
-      <script defer src="../js/swiper.js" />
-
     </Layout>
   );
 };
